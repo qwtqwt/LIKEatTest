@@ -25,6 +25,7 @@ public class LikeatMainController extends HttpServlet {
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(target);
 		dispatcher.forward(request, response);
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
