@@ -107,14 +107,13 @@ $(document).ready(function() {
 	});
 	
 	
-	// 전화번호는 숫자만 받는 로직 구성해야함
-	
-	
+	// 아이디 중복체크는 했는데
+			// 이게 submit할 때 어떻게 걸러야할지 모르겠다()
 	
 	// 폼체크
 //	$('#id').val().replace(/ /g, ''); -> 모든 공백 없어짐.﻿ 
 //	$('#id').val().replace(/,/g, ''); -> 모든 콤마(,) 없어짐.﻿ 
-	$("#submit").on("click", function(event) {
+	$("#joinForm").on("submit", function(event) {
 		event.preventDefault();
 		if($("#username").val().trim().length == 0) {
 			$(".username").text("이름을 입력해주세요");
@@ -130,10 +129,20 @@ $(document).ready(function() {
 			$(".userpwCheck").text("빈칸없이 입력해주세요");
 		} else if($("#userpwCheck").val().trim().length == 0) {
 			$(".userpwCheck").text("비밀번호를 확인해주세요");
-		} else if() {
+		} else if($("#email").val().trim().length == 0) {
+			$(".email").text("이메일을 입력해주세요");
+		} else if($("#email").val().length != $('#email').val().replace(/ /g, '').length) {
+			$(".email").text("빈칸없이 입력해주세요");
+/*		} else if($("#email:not(:contains('@'))")) {
+			$(".email").text("이메일 형식을 확인해주세요");   */
+		} else if($("#phone2").val().trim().length == 0) {
+			$(".phone").text("전화번호를 입력해주세요");
+		} else if($("#phone3").val().trim().length == 0) {
+			$(".phone").text("전화번호를 입력해주세요");
 		} else {
-			
+			$("#joinForm").submit();
 		}
+	// 전화번호는 숫자만 받는 로직 구성해야함
 	});
 	
 	
@@ -150,7 +159,7 @@ $(document).ready(function() {
                	</div>
             </div> 
 			<div class="main-login main-center">
-				<form id="joinForm" class="form-horizontal" method="post" action="#">
+				<form id="joinForm" class="form-horizontal" method="post" action="JoinController">
 					<div class="form-group">
 					  <label class="col-md-5 control-label" for="Name">이름</label>  
 					  <div class="col-md-2">
@@ -190,7 +199,7 @@ $(document).ready(function() {
 					  <label class="col-md-5 control-label" for="emailaddr">Email</label>  
 					  <div class="col-md-4">
 					  <input id="email" name="email" type="text" placeholder="LIKEat@LIKEat.com" class="form-control">
-						<span class="formValidation"></span>
+						<span class="formValidation email"></span>
 					  </div>
 					</div>
 					
