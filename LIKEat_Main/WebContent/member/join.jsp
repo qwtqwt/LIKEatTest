@@ -107,18 +107,33 @@ $(document).ready(function() {
 	});
 	
 	
+	// 전화번호는 숫자만 받는 로직 구성해야함
+	
+	
 	
 	// 폼체크
+//	$('#id').val().replace(/ /g, ''); -> 모든 공백 없어짐.﻿ 
+//	$('#id').val().replace(/,/g, ''); -> 모든 콤마(,) 없어짐.﻿ 
 	$("#submit").on("click", function(event) {
 		event.preventDefault();
 		if($("#username").val().trim().length == 0) {
 			$(".username").text("이름을 입력해주세요");
+		} else if($("#username").val().length != $('#username').val().replace(/ /g, '').length) {
+			$(".username").text("빈칸없이 입력해주세요");
 		} else if($("#userid").val().trim().length == 0) {
 			$(".userid").text("아이디를 입력해주세요");
+		} else if($("#userid").val().length != $('#userid').val().replace(/ /g, '').length) {
+			$(".userid").text("빈칸없이 입력해주세요");
 		} else if($("#userpw").val().trim().length == 0) {
 			$(".userpwCheck").text("비밀번호를 입력해주세요");
+		} else if($("#userpw").val().length != $('#userpw').val().replace(/ /g, '').length) {
+			$(".userpwCheck").text("빈칸없이 입력해주세요");
 		} else if($("#userpwCheck").val().trim().length == 0) {
 			$(".userpwCheck").text("비밀번호를 확인해주세요");
+		} else if() {
+			
+		} else {
+			
 		}
 	});
 	
