@@ -131,7 +131,6 @@ $(document).ready(function() {
 		} else if($("#userpwCheck").val().trim().length == 0) {
 			$(".userpwCheck").text("비밀번호를 확인해주세요");
 		} else if() {
-			
 		} else {
 			
 		}
