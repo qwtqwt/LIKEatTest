@@ -9,10 +9,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.entity.MemberDTO;
+import com.service.MemeberService;
+
 @WebServlet("/JoinController")
 public class JoinController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
+		
+		String username = request.getParameter("username");
+		String userid = request.getParameter("userid");
+		String userpw = request.getParameter("userpw");
+		String email = request.getParameter("email");
+		String phone1 = request.getParameter("phone1");
+		String phone2 = request.getParameter("phone2");
+		String phone3 = request.getParameter("phone3");
+		
+		MemberDTO dto = new MemberDTO(username, userid, userpw, email, phone1, phone2, phone3);
+		
+		MemeberService service = new MemeberService();
+		service.join(dto);
+		
+		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("LikeatMainController");
 		dispatcher.forward(request, response);

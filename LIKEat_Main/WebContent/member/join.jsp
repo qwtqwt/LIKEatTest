@@ -113,8 +113,10 @@ $(document).ready(function() {
 	// 폼체크
 //	$('#id').val().replace(/ /g, ''); -> 모든 공백 없어짐.﻿ 
 //	$('#id').val().replace(/,/g, ''); -> 모든 콤마(,) 없어짐.﻿ 
+	// 전화번호는 숫자만 받는 로직 구성해야함
 	$("#joinForm").on("submit", function(event) {
-		event.preventDefault();
+		var result = false;
+//		event.preventDefault();
 		if($("#username").val().trim().length == 0) {
 			$(".username").text("이름을 입력해주세요");
 		} else if($("#username").val().length != $('#username').val().replace(/ /g, '').length) {
@@ -140,12 +142,13 @@ $(document).ready(function() {
 		} else if($("#phone3").val().trim().length == 0) {
 			$(".phone").text("전화번호를 입력해주세요");
 		} else {
-			$("#joinForm").submit();
+//			$("#joinForm").submit();
+//			document.getElementById('joinForm').submit();
+// joinForm 을 submit 이벤트 걸지말고, click이벤트 주고, 여기서 submit하면 왜 안넘어가는거지?
+			result = true;
 		}
-	// 전화번호는 숫자만 받는 로직 구성해야함
+		return result;
 	});
-	
-	
 	
 });//ready
 </script>		

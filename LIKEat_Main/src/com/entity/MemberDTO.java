@@ -1,22 +1,35 @@
 package com.entity;
 
 public class MemberDTO {
+	private String username;
 	private String userid;
 	private String userpw;
-	private String username;
 	private String email;
 	private String phone1;
+	private String phone2;
+	private String phone3;
 	
 	public MemberDTO() {
 	}
 
-	public MemberDTO(String userid, String userpw, String username, String email, String phone1) {
+	public MemberDTO(String username, String userid, String userpw, String email, String phone1, String phone2,
+			String phone3) {
 		super();
+		this.username = username;
 		this.userid = userid;
 		this.userpw = userpw;
-		this.username = username;
 		this.email = email;
 		this.phone1 = phone1;
+		this.phone2 = phone2;
+		this.phone3 = phone3;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getUserid() {
@@ -35,14 +48,6 @@ public class MemberDTO {
 		this.userpw = userpw;
 	}
 
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -59,10 +64,28 @@ public class MemberDTO {
 		this.phone1 = phone1;
 	}
 
+	public String getPhone2() {
+		return phone2;
+	}
+
+	public void setPhone2(String phone2) {
+		this.phone2 = phone2;
+	}
+
+	public String getPhone3() {
+		return phone3;
+	}
+
+	public void setPhone3(String phone3) {
+		this.phone3 = phone3;
+	}
+
 	@Override
 	public String toString() {
-		return "MemberDTO [userid=" + userid + ", userpw=" + userpw + ", username=" + username + ", email=" + email
-				+ ", phone1=" + phone1 + "]";
+		return "MemberDTO [username=" + username + ", userid=" + userid + ", userpw=" + userpw + ", email=" + email
+				+ ", phone1=" + phone1 + ", phone2=" + phone2 + ", phone3=" + phone3 + "]";
 	}
+
+
 	
 }
