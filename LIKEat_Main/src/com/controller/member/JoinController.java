@@ -16,7 +16,7 @@ import com.service.MemeberService;
 @WebServlet("/JoinController")
 public class JoinController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		request.setCharacterEncoding("utf-8");
 		
 		String username = request.getParameter("username");
 		String userid = request.getParameter("userid");

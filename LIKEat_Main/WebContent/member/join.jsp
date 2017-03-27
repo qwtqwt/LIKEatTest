@@ -228,13 +228,12 @@ $(document).ready(function() {
 					</div>
 					
 					
-					
 					<!-- Button -->
 					<div class="form-group">
 					  <label class="col-md-5 control-label" for="submit"></label>
 					  <div class="col-md-4">
 					  	<input type="reset" id="clearForm" name="clearForm" class="btn btn-primary" style="background-color: orange; border: none;" value="다시 작성하기">
-					    <button id="submit" name="submit" class="btn btn-primary" style="background-color: orange; border: none;">LIKEat NOW!</button>
+					    <button id="submit" name="submit" class="btn btn-primary" style="background-color: white; border-color: orange; color: orange; font-weight: bold;">LIKEat NOW!</button>
 					  </div>
 					</div>
 				</form>
