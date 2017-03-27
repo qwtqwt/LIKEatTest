@@ -116,11 +116,13 @@ $(document).ready(function() {
 //	$('#id').val().replace(/,/g, ''); -> 모든 콤마(,) 없어짐.﻿ 
 	// 전화번호는 숫자만 받는 로직 구성해야함
 	$("#joinForm").on("submit", function(event) {
-//		event.preventDefault();
 		var result = false;
+//		event.preventDefault();
 
 		if(idResult.includes("존재하는")) {
+			alert(idCheck.trim().length);
 			$(".userid").text("존재하는 아이디입니다!");
+			return false;
 		} else if($("#username").val().trim().length == 0) {
 			$(".username").text("이름을 입력해주세요");
 		} else if($("#username").val().length != $('#username').val().replace(/ /g, '').length) {

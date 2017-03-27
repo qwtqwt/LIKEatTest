@@ -34,7 +34,7 @@ public class JoinController extends HttpServlet {
 		try {
 			service.join(dto);
 			target = "LikeatMainController";
-			request.setAttribute("Success", "가입을 축하드립니다");
+			request.setAttribute("SuccessAlert", "가입을 축하드립니다");
 		} catch (LikeatException e) {
 			e.printStackTrace();
 			target = "error.jsp";

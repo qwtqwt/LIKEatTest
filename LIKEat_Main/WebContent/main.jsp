@@ -11,6 +11,10 @@
 <body>
 <jsp:include page="includeTop/topNav.jsp" />
 <jsp:include page="main/main.jsp" />
-
+<c:if test="${SuccessAlert != null}">
+	<script type="text/javascript">
+		alert('${SuccessAlert}');
+	</script>
+</c:if>
 </body>
 </html>
