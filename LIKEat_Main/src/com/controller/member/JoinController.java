@@ -30,7 +30,7 @@ public class JoinController extends HttpServlet {
 		MemeberService service = new MemeberService();
 		service.join(dto);
 		
-		
+		request.setAttribute("Success", "가입을 축하드립니다");
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("LikeatMainController");
 		dispatcher.forward(request, response);

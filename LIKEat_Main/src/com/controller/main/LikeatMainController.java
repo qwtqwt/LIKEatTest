@@ -24,6 +24,8 @@ public class LikeatMainController extends HttpServlet {
 		String target = "main.jsp";
 		
 		
+		request.getAttribute("Success");
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(target);
 		dispatcher.forward(request, response);
 		
