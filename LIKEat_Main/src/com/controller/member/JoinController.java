@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.entity.MemberDTO;
+import com.exception.LikeatException;
 import com.service.MemeberService;
 
 @WebServlet("/JoinController")
@@ -27,10 +28,19 @@ public class JoinController extends HttpServlet {
 		
 		MemberDTO dto = new MemberDTO(username, userid, userpw, email, phone1, phone2, phone3);
 		
-		MemeberService service = new MemeberService();
-		service.join(dto);
+		String target = "";
 		
-		request.setAttribute("Success", "가입을 축하드립니다");
+		MemeberService service = new MemeberService();
+		try {
+			service.join(dto);
+			target = "LikeatMainController";
+			request.setAttribute("Success", "가입을 축하드립니다");
+		} catch (LikeatException e) {
+			e.printStackTrace();
+			target = "error.jsp";
+			
+		}
+		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("LikeatMainController");
 		dispatcher.forward(request, response);
