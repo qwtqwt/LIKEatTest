@@ -38,11 +38,13 @@ public class JoinController extends HttpServlet {
 		} catch (LikeatException e) {
 			e.printStackTrace();
 			target = "error.jsp";
-			
+			request.setAttribute("errorMsg", "가입 절차 중 문제가 발생했어요 :-( ");
+			request.setAttribute("linkMsg", "회원가입 재시도!");
+			request.setAttribute("link", "JoinFormController");
 		}
 		
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("LikeatMainController");
+		RequestDispatcher dispatcher = request.getRequestDispatcher(target);
 		dispatcher.forward(request, response);
 	}
 

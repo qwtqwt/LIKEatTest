@@ -15,7 +15,7 @@ public class MemeberService {
 		try{
 			session.insert(namespace + "join", dto);
 			session.commit();
-		}catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			throw new LikeatException("회원가입실패!!!!!!!!!!!!!");
 		} finally {
